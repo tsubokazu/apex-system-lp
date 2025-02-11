@@ -6,6 +6,10 @@
 .pnp.js
 .yarn/install-state.gz
 
+# production
+/build
+/dist
+
 # testing
 /coverage
 
@@ -34,3 +38,28 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# PWA files
+**/public/sw.js
+**/public/workbox-*.js
+**/public/worker-*.js
+**/public/sw.js.map
+**/public/workbox-*.js.map
+**/public/worker-*.js.map
+
+# Sitemap
+/public/sitemap*.xml
+/public/robots.txt
+
+# Next.js cache
+.next/cache/
+
+# IDE
+.idea/
+.vscode/
+
+# Environment Variables
+.env
+.env.development
+.env.production
+.env.test
