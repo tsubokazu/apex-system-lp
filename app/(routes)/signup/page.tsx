@@ -40,8 +40,8 @@ export default function SignupPage() {
       email,
       password,
       options: {
-        data: { username }, // ユーザー名を保存
-        emailRedirectTo: `${window.location.origin}/confirm`, // メール確認後のリダイレクトURL
+        data: { username },
+        emailRedirectTo: `${window.location.origin}/login`,
       },
     });
 
@@ -53,7 +53,7 @@ export default function SignupPage() {
     }
 
     alert("確認メールを送信しました。メールを確認してください。");
-    router.push("/login"); // ログインページにリダイレクト
+    router.push("/login");
   };
 
   return (
