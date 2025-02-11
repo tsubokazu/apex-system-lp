@@ -44,7 +44,7 @@ export default function SignupPage() {
         <Card className="bg-gray-800 border-none">
           <CardHeader className="text-center">
             <CardTitle className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600">
-              LastBinary 新規登録
+              Apex System 新規登録
             </CardTitle>
           </CardHeader>
           <CardContent>

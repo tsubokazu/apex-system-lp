@@ -20,7 +20,7 @@ export function HeroSection() {
       <motion.section {...fadeInUp} className="w-full h-full">
         <div className="flex w-full h-full flex-col items-center justify-center text-center z-20 absolute top-0 left-0">
           <h1 className="text-5xl font-bold mb-4 text-white">
-            LastBinary{" "}
+            Apex System{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600">
               コミュニティ
             </span>

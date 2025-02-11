@@ -11,25 +11,25 @@ export default function SNSPage() {
     {
       name: "Twitter",
       icon: Twitter,
-      url: "https://twitter.com/lastbinary",
+      url: "https://twitter.com/Apex System",
       followers: "10.5K",
     },
     {
       name: "Facebook",
       icon: Facebook,
-      url: "https://facebook.com/lastbinary",
+      url: "https://facebook.com/Apex System",
       followers: "8.2K",
     },
     {
       name: "Instagram",
       icon: Instagram,
-      url: "https://instagram.com/lastbinary",
+      url: "https://instagram.com/Apex System",
       followers: "15.3K",
     },
     {
       name: "YouTube",
       icon: Youtube,
-      url: "https://youtube.com/lastbinary",
+      url: "https://youtube.com/Apex System",
       subscribers: "50.1K",
     },
   ];

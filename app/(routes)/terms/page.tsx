@@ -16,7 +16,7 @@ export default function TermsPage() {
         >
           <h1 className="text-5xl font-bold mb-4 text-white">規約・禁止事項</h1>
           <p className="text-xl mb-8 text-gray-300">
-            LastBinaryのサービス利用に関する重要な情報
+            Apex Systemのサービス利用に関する重要な情報
           </p>
         </motion.section>
 
@@ -41,8 +41,8 @@ export default function TermsPage() {
                     利用規約
                   </h2>
                   <p className="text-gray-300 mb-4">
-                    1. サービスの利用:
-                    LastBinaryのサービスを利用することにより、ユーザーは本規約に同意したものとみなされます。
+                    1. サービスの利用: Apex
+                    Systemのサービスを利用することにより、ユーザーは本規約に同意したものとみなされます。
                   </p>
                   <p className="text-gray-300 mb-4">
                     2. アカウント:
@@ -53,8 +53,8 @@ export default function TermsPage() {
                     ユーザーが投稿するコンテンツに関する全ての責任はユーザーにあります。
                   </p>
                   <p className="text-gray-300">
-                    4. 変更:
-                    LastBinaryは、事前の通知なしに本規約を変更する権利を有します。
+                    4. 変更: Apex
+                    Systemは、事前の通知なしに本規約を変更する権利を有します。
                   </p>
                 </TabsContent>
                 <TabsContent value="privacy">
@@ -121,8 +121,10 @@ export default function TermsPage() {
             </CardHeader>
             <CardContent>
               <p className="text-gray-300 mb-4">
-                LastBinaryは、提供する情報やツールの正確性、完全性、有用性を保証するものではありません。ユーザーは自己責任でサービスを利用するものとし、
-                取引に関連して発生した損失や損害について、LastBinaryは一切の責任を負いません。
+                Apex
+                Systemは、提供する情報やツールの正確性、完全性、有用性を保証するものではありません。ユーザーは自己責任でサービスを利用するものとし、
+                取引に関連して発生した損失や損害について、Apex
+                Systemは一切の責任を負いません。
               </p>
               <p className="text-gray-300">
                 バイナリーオプション取引には高いリスクが伴います。投資は自己資金の範囲内で行い、十分な知識と経験を積んだ上で慎重に判断してください。

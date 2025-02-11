@@ -4,8 +4,8 @@ import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: "Last Binary",
-  description: "Last Binary",
+  title: "Apex System",
+  description: "Apex System",
 };
 
 export default function RootLayout({

@@ -55,7 +55,7 @@ export default function ToolsPage() {
                   </h2>
                   <ol className="list-decimal list-inside text-gray-300 space-y-2">
                     <li>ツールをダウンロードしてインストール</li>
-                    <li>LastBinaryアカウントでログイン</li>
+                    <li>Apex Systemアカウントでログイン</li>
                     <li>取引プラットフォームと連携</li>
                     <li>好みに応じてツールをカスタマイズ</li>
                     <li>市場分析と取引シグナルを確認</li>
@@ -141,7 +141,7 @@ export default function ToolsPage() {
             ツールをダウンロード <Download className="ml-2" />
           </Button>
           <p className="mt-4 text-gray-300">
-            ※ダウンロードにはLastBinaryアカウントが必要です。
+            ※ダウンロードにはApex Systemアカウントが必要です。
           </p>
         </motion.section>
       </main>

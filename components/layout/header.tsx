@@ -16,7 +16,7 @@ export default function Header() {
           href="/"
           className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600"
         >
-          LastBinary
+          Apex System
         </Link>
         <div className="hidden md:flex space-x-4">
           <Link
