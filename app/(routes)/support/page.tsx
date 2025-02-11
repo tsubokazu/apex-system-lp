@@ -20,12 +20,11 @@ type Course = {
 
 export default function SupportPage() {
   const { user } = useAuth();
+  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
 
   if (!user) {
     return <div>ログインしていません</div>;
   }
-
-  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
 
   const courses: Course[] = [
     {

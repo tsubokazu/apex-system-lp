@@ -16,14 +16,13 @@ import { useAuth } from "@/hooks/useAuth";
 
 export default function ContactPage() {
   const { user } = useAuth();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   if (!user) {
     return <div>ログインしていません</div>;
   }
-
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
