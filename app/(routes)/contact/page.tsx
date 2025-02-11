@@ -12,8 +12,15 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function ContactPage() {
+  const { user } = useAuth();
+
+  if (!user) {
+    return <div>ログインしていません</div>;
+  }
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");

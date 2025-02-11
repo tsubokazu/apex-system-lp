@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Twitter, Facebook, Instagram, Youtube } from "lucide-react";
-
+import { useAuth } from "@/hooks/useAuth";
 export default function SNSPage() {
   const snsAccounts = [
     {
@@ -54,6 +54,12 @@ export default function SNSPage() {
       date: "2日前",
     },
   ];
+
+  const { user } = useAuth();
+
+  if (!user) {
+    return <div>ログインしていません</div>;
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-gray-100">

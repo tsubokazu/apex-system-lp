@@ -11,7 +11,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Calendar, Users, MessageCircle } from "lucide-react";
-
+import { useAuth } from "@/hooks/useAuth";
 type Course = {
   id: number;
   title: string;
@@ -19,6 +19,12 @@ type Course = {
 };
 
 export default function SupportPage() {
+  const { user } = useAuth();
+
+  if (!user) {
+    return <div>ログインしていません</div>;
+  }
+
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
 
   const courses: Course[] = [

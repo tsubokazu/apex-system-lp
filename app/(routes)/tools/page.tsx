@@ -5,8 +5,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Download, Zap, BarChart, Lock } from "lucide-react";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function ToolsPage() {
+  const { user } = useAuth();
+
+  if (!user) {
+    return <div>ログインしていません</div>;
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-gray-100">
       <main className="container mx-auto px-4 py-12">

@@ -9,6 +9,8 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
+import { useRouter } from "next/navigation";
+import { supabase } from "@/lib/supabaseClient";
 
 export default function SignupPage() {
   const [username, setUsername] = useState("");
@@ -18,8 +20,10 @@ export default function SignupPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [agreeTerms, setAgreeTerms] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (password !== confirmPassword) {
       alert("パスワードが一致しません。");
@@ -29,8 +33,27 @@ export default function SignupPage() {
       alert("利用規約に同意してください。");
       return;
     }
-    // ここに新規登録処理のロジックを実装
-    console.log("Sign up attempt with:", { username, email, password });
+
+    setLoading(true);
+
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: { username }, // ユーザー名を保存
+        emailRedirectTo: `${window.location.origin}/confirm`, // メール確認後のリダイレクトURL
+      },
+    });
+
+    setLoading(false);
+
+    if (error) {
+      alert(`エラー: ${error.message}`);
+      return;
+    }
+
+    alert("確認メールを送信しました。メールを確認してください。");
+    router.push("/login"); // ログインページにリダイレクト
   };
 
   return (
@@ -169,7 +192,7 @@ export default function SignupPage() {
                 type="submit"
                 className="w-full bg-gradient-to-r from-orange-400 to-red-600 text-white hover:from-orange-500 hover:to-red-700 transition-colors"
               >
-                登録
+                {loading ? "登録中..." : "登録"}
               </Button>
             </form>
             <div className="mt-6 text-center">

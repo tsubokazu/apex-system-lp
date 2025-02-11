@@ -9,16 +9,32 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { supabase } from "@/lib/supabaseClient";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // ここにログイン処理のロジックを実装
-    console.log("Login attempt with:", { email, password });
+    setLoading(true);
+
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    setLoading(false);
+
+    if (error) {
+      alert(`ログインエラー: ${error.message}`);
+      return;
+    }
+
+    router.push("/");
   };
 
   return (
@@ -89,7 +105,7 @@ export default function LoginPage() {
                 className="w-full bg-gradient-to-r from-orange-400 to-red-600 text-white hover:from-orange-500 hover:to-red-700 transition-colors"
                 onClick={() => router.push("/login")}
               >
-                ログイン
+                {loading ? "ログイン中..." : "ログイン"}
               </Button>
             </form>
             <div className="mt-4 text-center">
